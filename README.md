@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wall Calendar
+
+An interactive wall calendar component built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Features
+- Physical wall calendar aesthetic with spiral binding, hero image, and diagonal geometric accent
+- Month-by-month navigation with slide + crossfade animations
+- Day range selection with hover preview and staggered highlight animation
+- Per-month notes panel with localStorage persistence
+- Holiday markers for UK public holidays (2024–2026)
+- Keyboard navigation (Arrow keys to change month, Escape to clear selection)
+- Fully responsive — side-by-side on desktop, stacked on mobile
+- Dynamic color theming per month derived from the hero image palette
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** for animations
+- **localStorage** for client-side note persistence
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design Decisions
+- Grid starts on Monday (ISO week standard)
+- Theme colors are manually curated per month to match the hero image mood
+- Notes are stored per calendar month, so navigating months gives you a fresh notepad
+- The `effectiveEnd` pattern enables live hover preview during range selection without committing the end date
 
-## Learn More
+## Project Structure
+```
+src/
+  app/          # Next.js App Router pages
+  components/   # Calendar UI components
+  hooks/        # useCalendar, useDateRange, useNotes
+  lib/          # Utilities, holidays data, month image themes
+  types/        # Shared TypeScript interfaces
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is optimized for Vercel deployment:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push the project to a public GitHub repository
+2. Import the repository at [vercel.com/new](https://vercel.com/new)
+3. Vercel will auto-detect Next.js — click Deploy
+4. No environment variables required
 
-## Deploy on Vercel
+## Live Demo
+<!-- Add your Vercel URL here after deployment -->
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Video Demo
+<!-- Add your Loom/YouTube link here -->
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Submission Checklist
+- [x] Wall calendar aesthetic with hero image and spiral binding
+- [x] Day range selector with start/end/in-between visual states
+- [x] Integrated notes section with localStorage persistence
+- [x] Fully responsive (desktop side-by-side, mobile stacked)
+- [x] Month flip animation (slide + crossfade)
+- [x] Keyboard navigation (Arrow keys + Escape)
+- [x] Holiday markers (UK public holidays 2024–2026)
+- [x] Dynamic per-month color theming
+- [x] Today indicator with pulse animation
+- [x] TypeScript throughout
+- [ ] Live demo URL
+- [ ] Video demo link

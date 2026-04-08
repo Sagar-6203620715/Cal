@@ -1,2 +1,88 @@
-export {};
-// TODO
+import type { MonthTheme } from "@/types";
+
+export const MONTH_IMAGES: MonthTheme[] = [
+  {
+    primary: "#2f6fa3",
+    accent: "#8db8dd",
+    text: "#ffffff",
+    imageSrc: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&q=80",
+    imageAlt: "Snowy mountain climber in winter landscape",
+  },
+  {
+    primary: "#4f6b67",
+    accent: "#a8beb8",
+    text: "#ffffff",
+    imageSrc: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800&q=80",
+    imageAlt: "Misty forest with soft morning light",
+  },
+  {
+    primary: "#b65f8f",
+    accent: "#efc3da",
+    text: "#1a1a1a",
+    imageSrc: "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&q=80",
+    imageAlt: "Cherry blossoms in spring bloom",
+  },
+  {
+    primary: "#4f6f8a",
+    accent: "#b9cfdd",
+    text: "#ffffff",
+    imageSrc: "https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=800&q=80",
+    imageAlt: "Rainy cobblestone street reflecting city lights",
+  },
+  {
+    primary: "#4f8a5d",
+    accent: "#bcdcbf",
+    text: "#1a1a1a",
+    imageSrc: "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=800&q=80",
+    imageAlt: "Wildflower field under bright spring sky",
+  },
+  {
+    primary: "#f0a560",
+    accent: "#ffe0bf",
+    text: "#1a1a1a",
+    imageSrc: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+    imageAlt: "Golden hour beach with warm sunlight",
+  },
+  {
+    primary: "#244b8a",
+    accent: "#a9c0f2",
+    text: "#ffffff",
+    imageSrc: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+    imageAlt: "Fireworks over calm water at night",
+  },
+  {
+    primary: "#d89a2b",
+    accent: "#f7df9f",
+    text: "#1a1a1a",
+    imageSrc: "https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=800&q=80",
+    imageAlt: "Sunflower field in summer daylight",
+  },
+  {
+    primary: "#aa6a3f",
+    accent: "#eac3a6",
+    text: "#ffffff",
+    imageSrc: "https://images.unsplash.com/photo-1507371341162-763b5e419408?w=800&q=80",
+    imageAlt: "Autumn forest path with fallen leaves",
+  },
+  {
+    primary: "#6f5a4a",
+    accent: "#cfbaab",
+    text: "#ffffff",
+    imageSrc: "https://images.unsplash.com/photo-1508675801627-066ac4346a55?w=800&q=80",
+    imageAlt: "Foggy pumpkin field in autumn",
+  },
+  {
+    primary: "#5b626d",
+    accent: "#c8cdd4",
+    text: "#ffffff",
+    imageSrc: "https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?w=800&q=80",
+    imageAlt: "Bare trees in misty late autumn morning",
+  },
+  {
+    primary: "#3e5673",
+    accent: "#b8cbe0",
+    text: "#ffffff",
+    imageSrc: "https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=800&q=80",
+    imageAlt: "Snowy village lights during winter evening",
+  },
+];
