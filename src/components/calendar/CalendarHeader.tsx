@@ -1,14 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getMonthName } from "@/lib/calendarUtils";
 
 interface CalendarHeaderProps {
+  month: number;
+  year: number;
   onPrev: () => void;
   onNext: () => void;
   onToday: () => void;
 }
 
 export default function CalendarHeader({
+  month,
+  year,
   onPrev,
   onNext,
   onToday,
@@ -22,12 +27,16 @@ export default function CalendarHeader({
         whileHover={{ x: -3 }}
         whileTap={{ scale: 0.85 }}
         transition={{ duration: 0.15 }}
-        className="text-gray-700 hover:text-[var(--primary)] transition-colors"
+        className="text-gray-700 hover:text-[var(--cal-primary)] transition-colors"
       >
         <span className="text-2xl leading-none">←</span>
       </motion.button>
 
-      <div />
+      <div className="text-center">
+        <span className="text-xs font-semibold tracking-widest uppercase text-gray-400">
+          {getMonthName(month)} {year}
+        </span>
+      </div>
 
       <div className="flex items-center gap-4">
         <motion.button
@@ -37,7 +46,7 @@ export default function CalendarHeader({
           whileHover={{ x: 3 }}
           whileTap={{ scale: 0.85 }}
           transition={{ duration: 0.15 }}
-          className="text-gray-700 hover:text-[var(--primary)] transition-colors"
+          className="text-gray-700 hover:text-[var(--cal-primary)] transition-colors"
         >
           <span className="text-2xl leading-none">→</span>
         </motion.button>
@@ -45,7 +54,7 @@ export default function CalendarHeader({
         <button
           type="button"
           onClick={onToday}
-          className="text-sm text-gray-600 underline underline-offset-4 hover:text-[var(--primary)] transition-colors"
+          className="text-sm text-gray-600 underline underline-offset-4 hover:text-[var(--cal-primary)] transition-colors"
         >
           Today
         </button>

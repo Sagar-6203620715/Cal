@@ -45,7 +45,7 @@ export default function CalendarGrid({
     : null;
 
   return (
-    <div className="px-4 md:px-6 pb-6 pt-1">
+    <div className="px-3 md:px-4 pb-4 pt-1">
       <div className="grid grid-cols-7 gap-1 mb-2">
         {headers.map((label, idx) => {
           const isWeekendHeader = idx >= 5;
@@ -101,7 +101,7 @@ export default function CalendarGrid({
 
       {noteCount > 0 ? (
         <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-400 text-right pr-1">
-          {noteCount} note{noteCount !== 1 ? "s" : ""} this month
+          {noteCount} word{noteCount !== 1 ? "s" : ""} noted
         </div>
       ) : null}
     </div>

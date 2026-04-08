@@ -20,7 +20,7 @@ export default function HeroImage({
   credit,
 }: HeroImageProps) {
   return (
-    <div className="relative w-full h-[260px] md:h-[320px] overflow-hidden">
+    <div className="relative w-full h-[240px] md:h-[280px] overflow-hidden">
       <Image
         src={src}
         alt={alt}

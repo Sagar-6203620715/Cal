@@ -75,7 +75,7 @@ export default function DayCell({
       whileTap={day.isCurrentMonth ? { scale: 0.94 } : {}}
       transition={{ duration: 0.12 }}
       className={[
-        "relative isolate flex flex-col items-center justify-center w-full h-14 md:h-16 select-none rounded-lg text-sm transition-all duration-150",
+        "relative isolate flex flex-col items-center justify-center w-full h-12 md:h-[3.25rem] select-none rounded-lg text-sm transition-all duration-150",
         !day.isCurrentMonth ? "opacity-30 cursor-default pointer-events-none" : "cursor-pointer",
         isHovered && !isSelected && !isInRange ? "bg-gray-100" : "",
       ].join(" ")}

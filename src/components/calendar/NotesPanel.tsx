@@ -29,7 +29,7 @@ export default function NotesPanel({
   const endText = selectedRange.end ? formatMonthDay(selectedRange.end) : "…";
 
   return (
-    <div className="bg-gray-50 rounded-xl p-4" style={{ ["--primary" as any]: monthKeyedPrimary }}>
+    <div className="bg-gray-50 rounded-xl p-4" style={{ ["--cal-primary" as any]: monthKeyedPrimary }}>
       <div className="flex items-baseline justify-between gap-3">
         <div
           className="font-display text-lg font-semibold"
@@ -55,7 +55,7 @@ export default function NotesPanel({
         </label>
         <textarea
           id="month-notes"
-          className="w-full resize-none bg-transparent text-sm font-body px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]"
+          className="w-full resize-none bg-transparent text-sm font-body px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--cal-primary)]"
           rows={6}
           placeholder="Jot down your thoughts for this month..."
           value={monthNote}
@@ -89,7 +89,7 @@ export default function NotesPanel({
               <button
                 type="button"
                 onClick={() => onClearRange?.()}
-                className="text-gray-500 underline underline-offset-4 hover:text-[var(--primary)] transition-colors disabled:opacity-50 disabled:cursor-default"
+                className="text-gray-500 underline underline-offset-4 hover:text-[var(--cal-primary)] transition-colors disabled:opacity-50 disabled:cursor-default"
                 disabled={!onClearRange}
               >
                 Clear

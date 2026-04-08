@@ -28,7 +28,7 @@ export default function CalendarRoot() {
 
   const { monthNote, setMonthNote } = useNotes(year, month);
   const monthKey = `${year}-${month}`;
-  const noteCount = monthNote.trim().length > 0 ? 1 : 0;
+  const noteCount = monthNote.trim().split(/\s+/).filter(Boolean).length;
 
   useEffect(() => {
     document.documentElement.style.setProperty("--cal-primary", theme.primary);
@@ -53,7 +53,7 @@ export default function CalendarRoot() {
   }, [goToPrevMonth, goToNextMonth, clearRange]);
 
   return (
-    <div className="relative w-full max-w-[900px] mx-auto">
+    <div className="relative w-full max-w-[620px] mx-auto">
       <div className="-mb-2 z-10 relative">
         <BindingRing />
       </div>
@@ -79,6 +79,8 @@ export default function CalendarRoot() {
         </AnimatePresence>
 
         <CalendarHeader
+          month={month}
+          year={year}
           onPrev={goToPrevMonth}
           onNext={goToNextMonth}
           onToday={goToToday}
@@ -93,7 +95,7 @@ export default function CalendarRoot() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="flex flex-col md:flex-row"
           >
-            <div className="order-2 md:order-1 md:w-[35%] md:border-r border-gray-100">
+            <div className="order-2 md:order-1 md:w-[38%] md:border-r border-gray-100 p-3">
               <NotesPanel
                 monthNote={monthNote}
                 onMonthNoteChange={setMonthNote}
@@ -103,7 +105,7 @@ export default function CalendarRoot() {
               />
             </div>
 
-            <div className="order-1 md:order-2 md:w-[65%]">
+            <div className="order-1 md:order-2 md:w-[62%]">
               <CalendarGrid
                 days={days}
                 range={range}
