@@ -5,7 +5,8 @@ export interface DateRange {
 
 export interface Note {
   id: string;
-  dateKey: string; // format: "YYYY-MM-DD"
+  dateKey: string; // start date "YYYY-MM-DD"
+  rangeEnd?: string; // end date "YYYY-MM-DD" — only set for range notes
   content: string;
   createdAt: number;
 }

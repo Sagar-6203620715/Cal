@@ -1,6 +1,6 @@
 "use client";
 
-import type { DateRange } from "@/types";
+import type { DateRange, Note } from "@/types";
 
 import {
   getWeekdayHeaders,
@@ -17,6 +17,7 @@ interface CalendarGridProps {
   range: DateRange;
   hoverDate: Date | null;
   effectiveEnd: Date | null;
+  notes: Note[];
   noteCount: number;
   primary: string;
   accent: string;
@@ -29,6 +30,7 @@ export default function CalendarGrid({
   range,
   hoverDate,
   effectiveEnd,
+  notes,
   noteCount,
   primary,
   accent,
@@ -80,6 +82,7 @@ export default function CalendarGrid({
               ? Math.floor(Math.abs(dayMs - rangeStartMs) / (1000 * 60 * 60 * 24))
               : 0;
           const rangeIndex = Math.min(computedRangeIndex, 14);
+          const hasNote = notes.some((n) => n.dateKey === toDateKey(day.date));
 
           return (
             <DayCell
@@ -89,6 +92,7 @@ export default function CalendarGrid({
               isEnd={isEnd}
               isInRange={highlighted}
               isHovered={!!isHovered}
+              hasNote={hasNote}
               rangeIndex={rangeIndex}
               primary={primary}
               accent={accent}
@@ -99,11 +103,11 @@ export default function CalendarGrid({
         })}
       </div>
 
-      {noteCount > 0 ? (
+      {noteCount > 0 && (
         <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-400 text-right pr-1">
-          {noteCount} word{noteCount !== 1 ? "s" : ""} noted
+          {noteCount} saved note{noteCount !== 1 ? "s" : ""} this month
         </div>
-      ) : null}
+      )}
     </div>
   );
 }

@@ -26,9 +26,9 @@ export default function CalendarRoot() {
     clearRange,
   } = useDateRange();
 
-  const { monthNote, setMonthNote } = useNotes(year, month);
+  const { monthNote, setMonthNote, addNote, deleteNote, notes } = useNotes(year, month);
   const monthKey = `${year}-${month}`;
-  const noteCount = monthNote.trim().split(/\s+/).filter(Boolean).length;
+  const noteCount = notes.length;
 
   useEffect(() => {
     document.documentElement.style.setProperty("--cal-primary", theme.primary);
@@ -102,6 +102,9 @@ export default function CalendarRoot() {
                 selectedRange={range}
                 primary={theme.primary}
                 onClearRange={clearRange}
+                notes={notes}
+                onAddNote={addNote}
+                onDeleteNote={deleteNote}
               />
             </div>
 
@@ -111,6 +114,7 @@ export default function CalendarRoot() {
                 range={range}
                 hoverDate={hoverDate}
                 effectiveEnd={effectiveEnd}
+                notes={notes}
                 noteCount={noteCount}
                 primary={theme.primary}
                 accent={theme.accent}

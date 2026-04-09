@@ -62,7 +62,6 @@ export default function HeroImage({
 
       {credit ? (
         <div className="absolute bottom-1 right-2 text-[10px] text-white/60 z-10 select-none pointer-events-none">
-          Photo: Unsplash
         </div>
       ) : null}
     </div>

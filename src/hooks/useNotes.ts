@@ -53,13 +53,14 @@ export function useNotes(year: number, month: number) {
     window.localStorage.setItem(MONTH_NOTES_STORAGE_KEY, JSON.stringify(monthNotes));
   }, [monthNotes]);
 
-  const addNote = (dateKey: string, content: string) => {
+  const addNote = (dateKey: string, content: string, rangeEnd?: string) => {
     const trimmed = content.trim();
     if (!trimmed) return;
 
     const newNote: Note = {
       id: crypto.randomUUID(),
       dateKey,
+      rangeEnd,
       content: trimmed,
       createdAt: Date.now(),
     };

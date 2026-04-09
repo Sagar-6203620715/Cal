@@ -9,6 +9,7 @@ interface DayCellProps {
   isEnd: boolean;
   isInRange: boolean;
   isHovered: boolean;
+  hasNote: boolean;
   rangeIndex: number;
   primary: string;
   accent: string;
@@ -38,6 +39,7 @@ export default function DayCell({
   isEnd,
   isInRange,
   isHovered,
+  hasNote,
   rangeIndex,
   primary,
   accent,
@@ -127,6 +129,13 @@ export default function DayCell({
       ) : (
         // Keep layout stable if there's no dot
         <div className="mt-1 w-[5px] h-[5px] z-10" />
+      )}
+
+      {hasNote && !isSelected && (
+        <div
+          className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full"
+          style={{ backgroundColor: primary }}
+        />
       )}
 
       {day.holiday ? (
